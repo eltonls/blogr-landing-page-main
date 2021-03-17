@@ -1,0 +1,27 @@
+{
+  "name": "blogr-landing-page-main",
+  "version": "1.0.0",
+  "description": "Front-end mentor challenge",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "blogr-landing-page-main"
+  },
+  "keywords": [
+    "landing",
+    "page",
+    "web",
+    "css",
+    "html",
+    "sass",
+    "front-end"
+  ],
+  "author": "Elton",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
