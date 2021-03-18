@@ -1,0 +1,235 @@
+/* -------------------------------------------------------------------------- */
+/*                                    RESET                                   */
+/* -------------------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  RESET END                                 */
+/* -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/*                                  VARIABLES                                 */
+/* -------------------------------------------------------------------------- */
+
+// FONTS
+$font-ubuntu: 'Ubuntu', sans-serif;
+$font-overpass: 'Overpass', sans-serif;
+
+// COLORS
+// ### Primary
+
+// - Light red (CTA text): hsl(356, 100%, 66%)
+$color-primary-light-red: hsl(356, 100%, 66%);
+// - Very light red (CTA hover background): hsl(355, 100%, 74%)
+$color-primary-very-light-red: hsl(355, 100%, 74%);
+// - Very dark blue (headings): hsl(208, 49%, 24%)
+$color-primary-very-dark-blue: hsl(208, 49%, 24%);
+
+// ### Neutral
+
+// - White (text): hsl(0, 0%, 100%)
+$color-white: hsl(0, 0%, 100%);
+// - Grayish blue (footer text): hsl(240, 2%, 79%)
+$color-grayish-blue: hsl(240, 2%, 79%);
+// - Very dark grayish blue (body copy): hsl(207, 13%, 34%)
+$color-very-dark-grayish-blue: hsl(207, 13%, 34%); 
+// - Very dark black blue (footer background): hsl(240, 10%, 16%)
+$very-dark-black-blue: hsl(240, 10%, 16%);
+
+/* -------------------------------------------------------------------------- */
+/*                                Variables End                               */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                              GENERAL SELECTORS                             */
+/* -------------------------------------------------------------------------- */
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: $font-ubuntu;
+    color: $color-white;
+}
+
+a:link,
+a:visited,
+a:active{
+    text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 COMPONENTS                                 */
+/* -------------------------------------------------------------------------- */
+.u-margin-bottom-small{
+    margin-bottom: 3rem;
+}
+
+
+// Buttons: 
+
+.btn{
+    padding: 1rem 2.8rem;
+    border-radius: 2.5rem;
+    margin: .5rem;
+    text-align: center;
+    &--white{
+        background-color: $color-white;
+        color: $color-primary-light-red;
+        border: solid 1px $color-white;
+        font-weight: 700;  
+    }
+    &--transparent{
+        color: $color-white;
+        border: solid 1px $color-white;
+    }
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 Typography                                 */
+/* -------------------------------------------------------------------------- */
+
+.heading-primary{
+    color: $color-white;
+    font-family: $font-overpass; 
+    &--main{
+        display: block;
+        font-weight: 700;
+        font-size: 6rem;
+        margin-bottom: 2rem;
+    }
+    &--sub{
+      font-weight: 300;  
+    }
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    B E M                                   */
+/* -------------------------------------------------------------------------- */
+// - Very light red: hsl(13, 100%, 72%)
+// - Light red: hsl(353, 100%, 62%)
+.header{
+    width: 100vw;
+    height: 98vh;
+    background: url(../images/bg-pattern-intro.svg), linear-gradient(to right, 
+    hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    background-position: 30% 50%;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 8em;
+    &__top{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        height: 10%;
+        padding: 5rem 7.5rem 0rem 7.5rem;
+    }
+    &__body{
+        display: flex;
+    }
+}
+
+.logo-box{
+    margin-right: 3.8rem;
+    .logo{
+        height: 100%;
+    }
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding-bottom: .8rem; // Puts nav at the same line as Logo
+    &__menu{
+        display: flex;
+        flex-direction: row;  
+    }
+    &__item{
+        margin: 0px 1.5rem;
+    }
+    &__link:link,
+    &__link:visited,
+    &__link:active{
+        color: $color-white;
+        text-decoration: none;
+        &::after{
+            content: url(../images/icon-arrow-light.svg);
+            margin-left: .5rem;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.present{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100rem;
+    text-align: center;
+    &__btns{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+

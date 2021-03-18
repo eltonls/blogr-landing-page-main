@@ -1,0 +1,160 @@
+/* -------------------------------------------------------------------------- */
+/*                                    RESET                                   */
+/* -------------------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* -------------------------------------------------------------------------- */
+/*                                  RESET END                                 */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                  VARIABLES                                 */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                Variables End                               */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                              GENERAL SELECTORS                             */
+/* -------------------------------------------------------------------------- */
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+  font-family: "Ubuntu", sans-serif;
+  color: white; }
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none; }
+
+/* -------------------------------------------------------------------------- */
+/*                                 COMPONENTS                                 */
+/* -------------------------------------------------------------------------- */
+.u-margin-bottom-small {
+  margin-bottom: 3rem; }
+
+.btn {
+  padding: 1rem 2.8rem;
+  border-radius: 2.5rem;
+  margin: .5rem;
+  text-align: center; }
+  .btn--white {
+    background-color: white;
+    color: #ff525d;
+    border: solid 1px white;
+    font-weight: 700; }
+  .btn--transparent {
+    color: white;
+    border: solid 1px white; }
+
+/* -------------------------------------------------------------------------- */
+/*                                 Typography                                 */
+/* -------------------------------------------------------------------------- */
+.heading-primary {
+  color: white;
+  font-family: "Overpass", sans-serif; }
+  .heading-primary--main {
+    display: block;
+    font-weight: 700;
+    font-size: 6rem;
+    margin-bottom: 2rem; }
+  .heading-primary--sub {
+    font-weight: 300; }
+
+/* -------------------------------------------------------------------------- */
+/*                                    B E M                                   */
+/* -------------------------------------------------------------------------- */
+.header {
+  width: 100vw;
+  height: 98vh;
+  background: url(../images/bg-pattern-intro.svg), linear-gradient(to right, #ff8f70, #ff3d54);
+  background-position: 30% 50%;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 8em; }
+  .header__top {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 10%;
+    padding: 5rem 7.5rem 0rem 7.5rem; }
+  .header__body {
+    display: flex; }
+
+.logo-box {
+  margin-right: 3.8rem; }
+  .logo-box .logo {
+    height: 100%; }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  padding-bottom: .8rem; }
+  .nav__menu {
+    display: flex;
+    flex-direction: row; }
+  .nav__item {
+    margin: 0px 1.5rem; }
+  .nav__link:link, .nav__link:visited, .nav__link:active {
+    color: white;
+    text-decoration: none; }
+    .nav__link:link::after, .nav__link:visited::after, .nav__link:active::after {
+      content: url(../images/icon-arrow-light.svg);
+      margin-left: .5rem; }
+    .nav__link:link:hover, .nav__link:visited:hover, .nav__link:active:hover {
+      cursor: pointer; }
+
+.present {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100rem;
+  text-align: center; }
+  .present__btns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; }
