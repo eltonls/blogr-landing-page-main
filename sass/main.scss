@@ -127,6 +127,10 @@ table {
   border-spacing: 0;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                  RESET END                                 */
 /* -------------------------------------------------------------------------- */
@@ -149,7 +153,9 @@ $color-primary-very-light-red: hsl(355, 100%, 74%);
 // - Very dark blue (headings): hsl(208, 49%, 24%)
 $color-primary-very-dark-blue: hsl(208, 49%, 24%);
 
-body{color: #24242c;}
+body {
+  color: #24242c;
+}
 // ### Neutral
 
 // - White (text): hsl(0, 0%, 100%)
@@ -176,6 +182,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: $font-ubuntu;
+  // overflow: hidden;
 }
 
 a:link,
@@ -264,11 +271,17 @@ a:active {
   background-position: 30% 50%;
   background-repeat: no-repeat;
   border-bottom-left-radius: 8em;
+  .hamburguer {
+    display: none;
+    background: none;
+    border: none;
+  }
   &__top {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     height: 10%;
+    flex-wrap: wrap;
     padding: 5rem 7.5rem 0rem 7.5rem;
   }
   &__body {
@@ -329,6 +342,7 @@ a:active {
 .about {
   padding: 5rem;
   color: $color-very-dark-grayish-blue;
+  width: 100%;
 }
 
 .about-intro {
@@ -351,7 +365,7 @@ a:active {
 }
 
 .about-infrastructure {
-  height: 55vh;
+  height: 55rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -388,38 +402,212 @@ a:active {
   }
 }
 
-.footer{
-    padding: 5rem 5rem 0;
-    background-color: $very-dark-black-blue;
-    height: 35vh;
+.footer {
+  padding: 5rem 5rem 0;
+  background-color: $very-dark-black-blue;
+  height: 35vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: $font-overpass;
+  border-top-right-radius: 8em;
+  &__section {
+    h4 {
+      color: $color-white;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+  }
+  &__nav {
+  }
+  &__list {
+  }
+  &__list-item {
+    margin: 1rem 0;
+  }
+  &__link {
+    color: rgba($color-white, 0.6);
+  }
+}
+
+.attribution {
+  width: 100%;
+  color: $color-white;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Media Queries                               */
+/* -------------------------------------------------------------------------- */
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .header{
+    width: 100vw;
+    &__top{
+      padding: 3rem 1rem;
+    }
+  }
+  .btn-white{
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading-primary {
+    &--main {
+      font-size: 3.8rem;
+    }
+  }
+
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.5rem;
+  }
+  .header {
+    background-position: 35% 35%;
+    background-size: 350%;
+    &__top {
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+    }
+    .nav {
+      display: none;
+    }
+    .hamburguer {
+      display: block;
+    }
+  }
+  .logo-box{
+    margin-right: 0;
+  }
+  .present {
+    max-width: 100%;
+    text-align: center;
+  }
+  .about {
+    padding: 1rem;
+  }
+  .about-intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5rem 0;
+    &::after {
+      content: "";
+      order: 1;
+      background-image: url(../images/illustration-editor-mobile.svg);
+      background-size: cover;
+      background-position: center;
+      display: block;
+      width: 90%;
+      height: 30rem;
+    }
+    .text {
+      width: 99%;
+      order: 2;
+    }
+  }
+  .about-infrastructure {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-size: 200%;
+    background-position: 50% 180%;
+    &::before {
+      content: "";
+      background-image: url(../images/illustration-phones.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      height: 35rem;  
+      width: 100%;
+      transform: translateY(-10%);
+    }
+    .text {
+      width: 100%;
+    }
+  }
+
+  .about-opensource {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    font-family: $font-overpass;
-    &__section{
-
-        h4{
-            color: $color-white;
-            font-weight: 700;
-            margin-bottom: 2rem;
-        }
+    flex-direction: column;
+    align-items: center;
+    .text {
+      width: 100%;
     }
-    &__nav{
-
+    &::before {
+      content: "";
+      background-image: url(../images/illustration-laptop-mobile.svg);
+      background-size: cover;
+      background-position: center;
+      transform: translate(0);
+      width: 100%;
+      height: 40%;
     }
-    &__list{
+  }
+  .footer {
+    padding: 1.5rem;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .logo-box{
+      margin-bottom: 3rem;
     }
-    &__list-item{
-        margin: 1rem 0;
+    &__section {
+      margin-bottom: 1rem;
+      h4 {
+        margin-bottom: .5rem;
+      }
     }
-    &__link{
-        color: rgba($color-white, .6);
+    &__list-item {
+      margin: 0 1.5rem;
     }
+  }
 }
 
-.attribution{
-    width: 100%;
-    color: $color-white;
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (max-width: 480px) {
+
 }
-
-

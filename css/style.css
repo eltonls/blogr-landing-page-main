@@ -125,6 +125,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+* {
+  box-sizing: border-box; }
+
 /* -------------------------------------------------------------------------- */
 /*                                  RESET END                                 */
 /* -------------------------------------------------------------------------- */
@@ -216,11 +219,16 @@ a:active {
   background-position: 30% 50%;
   background-repeat: no-repeat;
   border-bottom-left-radius: 8em; }
+  .header .hamburguer {
+    display: none;
+    background: none;
+    border: none; }
   .header__top {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     height: 10%;
+    flex-wrap: wrap;
     padding: 5rem 7.5rem 0rem 7.5rem; }
   .header__body {
     display: flex; }
@@ -266,7 +274,8 @@ a:active {
 
 .about {
   padding: 5rem;
-  color: #4b5862; }
+  color: #4b5862;
+  width: 100%; }
 
 .about-intro {
   display: flex;
@@ -284,7 +293,7 @@ a:active {
     align-self: flex-end; }
 
 .about-infrastructure {
-  height: 55vh;
+  height: 55rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -322,7 +331,8 @@ a:active {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  font-family: "Overpass", sans-serif; }
+  font-family: "Overpass", sans-serif;
+  border-top-right-radius: 8em; }
   .footer__section h4 {
     color: white;
     font-weight: 700;
@@ -335,3 +345,134 @@ a:active {
 .attribution {
   width: 100%;
   color: white; }
+
+/* -------------------------------------------------------------------------- */
+/*                                Media Queries                               */
+/* -------------------------------------------------------------------------- */
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+  /* CSS */ }
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+  /* CSS */ }
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* CSS */ }
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .header {
+    width: 100vw; }
+    .header__top {
+      padding: 3rem 1rem; }
+  .btn-white {
+    white-space: nowrap; } }
+
+@media (max-width: 767px) {
+  .heading-primary--main {
+    font-size: 3.8rem; }
+  .heading-secondary {
+    font-size: 2.5rem; }
+  .heading-tertiary {
+    font-size: 2.5rem; }
+  .header {
+    background-position: 35% 35%;
+    background-size: 350%; }
+    .header__top {
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem; }
+    .header .nav {
+      display: none; }
+    .header .hamburguer {
+      display: block; }
+  .logo-box {
+    margin-right: 0; }
+  .present {
+    max-width: 100%;
+    text-align: center; }
+  .about {
+    padding: 1rem; }
+  .about-intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5rem 0; }
+    .about-intro::after {
+      content: "";
+      order: 1;
+      background-image: url(../images/illustration-editor-mobile.svg);
+      background-size: cover;
+      background-position: center;
+      display: block;
+      width: 90%;
+      height: 30rem; }
+    .about-intro .text {
+      width: 99%;
+      order: 2; }
+  .about-infrastructure {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-size: 200%;
+    background-position: 50% 180%; }
+    .about-infrastructure::before {
+      content: "";
+      background-image: url(../images/illustration-phones.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      height: 35rem;
+      width: 100%;
+      transform: translateY(-10%); }
+    .about-infrastructure .text {
+      width: 100%; }
+  .about-opensource {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .about-opensource .text {
+      width: 100%; }
+    .about-opensource::before {
+      content: "";
+      background-image: url(../images/illustration-laptop-mobile.svg);
+      background-size: cover;
+      background-position: center;
+      transform: translate(0);
+      width: 100%;
+      height: 40%; }
+  .footer {
+    padding: 1.5rem;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; }
+    .footer .logo-box {
+      margin-bottom: 3rem; }
+    .footer__section {
+      margin-bottom: 1rem; }
+      .footer__section h4 {
+        margin-bottom: .5rem; }
+    .footer__list-item {
+      margin: 0 1.5rem; } }
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
