@@ -18,10 +18,10 @@ menuBtns.forEach((element, idx) => {
 hamburguerBtn.addEventListener("click", function(){
     nav.classList.toggle("active-nav");
     if(nav.classList[1] === "active-nav"){
-        hamburguerBtn.children[0].setAttribute("src", "../images/icon-close.svg");
+        hamburguerBtn.children[0].setAttribute("src", "./images/icon-close.svg");
     }
     else{
-        hamburguerBtn.children[0].setAttribute("src", "../images/icon-hamburger.svg");
+        hamburguerBtn.children[0].setAttribute("src", "./images/icon-hamburger.svg");
     }
 });
 
