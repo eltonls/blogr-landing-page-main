@@ -169,12 +169,12 @@ a:active {
   border-radius: 2.5rem;
   margin: 0.5rem;
   text-align: center;
-  color: white; }
+  color: white;
+  font-weight: 700; }
   .btn--white {
     background-color: white;
     color: #ff525d;
-    border: solid 1px white;
-    font-weight: 700; }
+    border: solid 1px white; }
   .btn--transparent {
     color: white;
     border: solid 1px white; }
@@ -249,15 +249,41 @@ a:active {
     display: flex;
     flex-direction: row; }
   .nav__item {
-    margin: 0px 1.5rem; }
-  .nav__link:link, .nav__link:visited, .nav__link:active {
-    color: white;
-    text-decoration: none; }
-    .nav__link:link::after, .nav__link:visited::after, .nav__link:active::after {
+    position: relative;
+    margin: 0 1.5rem; }
+    .nav__item--sub:hover {
+      font-weight: 700; }
+    .nav__item--sub:not(:last-child) {
+      margin-bottom: 1rem; }
+  .nav__btn {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: white; }
+    .nav__btn::after {
       content: url(../images/icon-arrow-light.svg);
-      margin-left: 0.5rem; }
+      margin-left: 3px; }
+    .nav__btn:hover {
+      cursor: pointer;
+      text-decoration: underline; }
+    .nav__btn:focus {
+      outline: none; }
+  .nav__link:link, .nav__link:visited, .nav__link:active {
+    color: #4b5862;
+    text-decoration: none;
+    font-weight: 500; }
     .nav__link:link:hover, .nav__link:visited:hover, .nav__link:active:hover {
       cursor: pointer; }
+
+.nav__menu--sub {
+  background-color: white;
+  padding: 1.8rem 2.5rem;
+  position: absolute;
+  border-radius: .3em;
+  margin-top: .5rem;
+  width: 15rem;
+  z-index: 1;
+  display: none; }
 
 .present {
   position: absolute;
@@ -342,9 +368,22 @@ a:active {
   .footer__link {
     color: rgba(255, 255, 255, 0.6); }
 
+.active {
+  display: block;
+  animation: expand 1s ease-out; }
+
 .attribution {
   width: 100%;
   color: white; }
+
+@keyframes expand {
+  0% {
+    transform: scale(0.1) translateY(-5rem);
+    border-radius: 50%; }
+  50% {
+    transform: scale(0.6) translateY(-1rem); }
+  100% {
+    transform: scale(1) translateY(0); } }
 
 /* -------------------------------------------------------------------------- */
 /*                                Media Queries                               */
@@ -383,6 +422,19 @@ a:active {
     white-space: nowrap; } }
 
 @media (max-width: 767px) {
+  .btn {
+    padding: 1rem 2.8rem;
+    border-radius: 2.5rem;
+    margin: 0.5rem;
+    text-align: center;
+    color: white;
+    font-weight: 700; }
+    .btn--white {
+      background-color: #ff525d;
+      color: white;
+      border: solid 1px #ff7a85; }
+    .btn--transparent {
+      color: inherit; }
   .heading-primary--main {
     font-size: 3.8rem; }
   .heading-secondary {
@@ -391,15 +443,52 @@ a:active {
     font-size: 2.5rem; }
   .header {
     background-position: 35% 35%;
-    background-size: 350%; }
+    background-size: 350%;
+    position: relative; }
     .header__top {
       justify-content: space-between;
       align-items: center;
       padding: 2rem; }
-    .header .nav {
-      display: none; }
     .header .hamburguer {
-      display: block; }
+      display: block;
+      transition: all .5s; }
+      .header .hamburguer:focus {
+        outline: none; }
+  .nav {
+    display: none;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    z-index: 2;
+    width: 80%;
+    min-height: 40rem;
+    margin: 0 auto;
+    border-radius: .3em; }
+    .nav__menu {
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      color: #4b5862; }
+      .nav__menu:not(:last-child) {
+        padding-bottom: 2rem;
+        border-bottom: solid 1px #c8c8cb; }
+    .nav__item {
+      margin: 1.5rem 0; }
+    .nav__btn {
+      color: #4b5862;
+      padding: 0;
+      display: inline-block;
+      font-weight: 700; }
+      .nav__btn::after {
+        content: url(../images/icon-arrow-dark.svg);
+        margin-left: 3px; }
+    .nav__menu--sub {
+      position: relative;
+      margin: 0 auto;
+      margin-top: 1.5rem;
+      background-color: #c8c8cb; }
   .logo-box {
     margin-right: 0; }
   .present {
@@ -470,7 +559,10 @@ a:active {
       .footer__section h4 {
         margin-bottom: .5rem; }
     .footer__list-item {
-      margin: 0 1.5rem; } }
+      margin: 0 1.5rem; }
+  .active-nav {
+    display: flex;
+    animation: expand 1s ease-out; } }
 
 /* 
   ##Device = Most of the Smartphones Mobiles (Portrait)
