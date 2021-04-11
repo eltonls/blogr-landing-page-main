@@ -454,10 +454,6 @@ a:active {
       margin-bottom: 2rem;
     }
   }
-  &__nav {
-  }
-  &__list {
-  }
   &__list-item {
     margin: 1rem 0;
   }
@@ -634,6 +630,9 @@ a:active {
   .present {
     max-width: 100%;
     text-align: center;
+    &__btns{
+      color: $color-white;
+    }
   }
   .about {
     padding: 1rem;

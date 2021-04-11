@@ -499,6 +499,8 @@ a:active {
   .present {
     max-width: 100%;
     text-align: center; }
+    .present__btns {
+      color: white; }
   .about {
     padding: 1rem; }
   .about-intro {
